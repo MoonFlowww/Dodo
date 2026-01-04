@@ -35,7 +35,7 @@ The design avoids `exceptions`, `dynamic allocation`, `RTTI`, `locks`, and `I/O`
 
 ---
 
-## Underlying Optimization (Proof of Trust)
+## Underlying Optimization
 Dodo achieves its performance through several key architectural decisions:
 
 1. **Branch Prediction Hints:** Every check uses `DODO_LIKELY` (`__builtin_expect`), ensuring the CPU keeps the success path in the pipeline.
