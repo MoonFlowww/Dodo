@@ -1,6 +1,6 @@
 # Dodo 🌌
+> _Dodo — so your code (and you) can sleep better._
 
-**HFT Latency. Embedded Determinism.**
 
 Dodo is a single-header `C++20` failure-handling framework for systems with strict **latency**, **determinism**, and **reliability** constraints.
 It provides explicit, branch-predicted checks on the hot path while moving all diagnostic construction and recovery logic to cold paths.
