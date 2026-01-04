@@ -58,9 +58,9 @@ Reproduced via the included `run_stresstest.sh` on an x86_64 native build:
 | **Hot Path (Success)** | Release (-O3) | **~6.8 - 8.7** | Highly Optimized |
 | **Memory Alignment** | Release (-O3) | **~7.8 - 9.5** | Single-Instruction  |
 | **Cold Path (Failure)** | Release (-O3) | **~14.5 - 23.4** | Exception-Free Recovery |
-| **Debug Mode** | Debug (-O0) | **~27.3 - 49.1** | Traceability Enabled |
+| **Debug Mode** | Debug  (-O0) | **~27.3 - 49.1** | Traceability Enabled |
 
-Each function’s latency was measured in **CPU cycles** using a high-accuracy timer and batched calls, with initial warm-ups to stabilize branch predictors and caches.
+Each method’s latency was measured in **CPU cycles** using `uint64_t __rdtsc()` and **1M** iterations to stabilize branch predictors and caches.
 > For example:
 > - On a **3.5 GHz** core (≈ 3.5 billion cycles/sec), **1 cycle ≈ 0.286 ns**.  
 > - On a **4.0 GHz** core, **1 cycle ≈ 0.250 ns**.  
