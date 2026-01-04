@@ -14,7 +14,7 @@ Dodo is a high-performance, single-header C++20 framework designed for environme
 
 ---
 
-## 🛠 Documentation & API
+## Documentation & API
 
 ### Safety Checks (Frontend Macros)
 
