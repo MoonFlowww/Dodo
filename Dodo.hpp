@@ -37,7 +37,7 @@ namespace Dodo {
     // Core Types (POD, register-passable)
     // --------------------------------------------------------------------------
 
-    enum class Code : uint16_t {
+    enum class Code : uint16_t { // Error message
         Ok = 0,
         PreconditionFailed,
         PostconditionFailed,
