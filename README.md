@@ -1,8 +1,10 @@
 # Dodo 🌌
 
-**NASA-Grade Safety. HFT Latency. Embedded Determinism.**
+**HFT Latency. Embedded Determinism.**
 
-Dodo is a high-performance, single-header C++20 framework designed for environments where **failure is not an option** and **latency is measured in CPU cycles**. It provides a zero-cost abstraction for defensive programming by separating "Hot Path" execution logic from "Cold Path" failure handling.
+Dodo is a single-header `C++20` failure-handling framework for systems with strict **latency**, **determinism**, and **reliability** constraints.
+It provides explicit, branch-predicted checks on the hot path while moving all diagnostic construction and recovery logic to cold paths.
+The design avoids `exceptions`, `dynamic allocation`, `RTTI`, `locks`, and `I/O`, making it suitable for low-latency trading systems, embedded software, and safety-critical runtimes.
 
 ---
 
@@ -24,7 +26,7 @@ Dodo is a high-performance, single-header C++20 framework designed for environme
 | `DODO_ENSURE(cond, code)` | Recoverable | Post-condition check; returns `Status` on failure. |
 | `DODO_INVARIANT(cond, code)` | **Fatal** | Logic check; triggers `fail_fast` (panic). |
 | `DODO_CHECK_NOT_NULL(ptr, code)` | Recoverable | Optimized null pointer validation. |
-| `DODO_CHECK_RANGE(v, lo, hi, code)` | Recoverable | Bound check using unsigned comparison tricks. |
+| `DODO_CHECK_RANGE(value, low, high, code)` | Recoverable | Bound check using unsigned comparison tricks. |
 | `DODO_CHECK_ALIGNED(p, align, code)` | Recoverable | Power-of-2 memory alignment check. |
 
 ### Control Flow
