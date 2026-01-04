@@ -59,8 +59,16 @@ Reproduced via the included `run_stresstest.sh` on an x86_64 native build:
 | **Memory Alignment** | Release (-O3) | **~7.8 - 9.5** | Single-Instruction  |
 | **Cold Path (Failure)** | Release (-O3) | **~14.5 - 23.4** | Exception-Free Recovery |
 | **Debug Mode** | Debug (-O0) | **~27.3 - 49.1** | Traceability Enabled |
-> Note: Latency varies by compiler LTO and `DODO_FAST_MODE` settings.
 
+Each function’s latency was measured in **CPU cycles** using a high-accuracy timer and batched calls, with initial warm-ups to stabilize branch predictors and caches.
+> For example:
+> - On a **3.5 GHz** core (≈ 3.5 billion cycles/sec), **1 cycle ≈ 0.286 ns**.  
+> - On a **4.0 GHz** core, **1 cycle ≈ 0.250 ns**.  
+> - On a **4.7 GHz** core, **1 cycle ≈ 0.213 ns**.  
+>  
+> These conversions come from the fact that clock rate (in hertz) is the number of cycles per second:  
+> `time per cycle = 1 / frequency` (in seconds).
+> Note: Latency varies by compiler LTO and `DODO_FAST_MODE` settings.
 ---
 
 ## Open-Source Reproduction
