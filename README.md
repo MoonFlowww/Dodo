@@ -229,7 +229,7 @@ Dodo::Status Dodo::fail_recoverable(const Dodo::Failure& f) noexcept;
 ```cpp
 Dodo::Status Dodo::require(bool cond, Dodo::Code code, const Dodo::Failure& f) noexcept;
 Dodo::Status Dodo::ensure(bool cond, Dodo::Code code, const Dodo::Failure& f) noexcept;
-void         Dodo::invariant(bool cond, Dodo::Code code, const Dodo::Failure& f) noexcept;
+void Dodo::invariant(bool cond, Dodo::Code code, const Dodo::Failure& f) noexcept;
 
 template<class T>
 Dodo::Status Dodo::check_not_null(const T* p, Dodo::Code code, const Dodo::Failure& f) noexcept;
