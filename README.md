@@ -9,7 +9,6 @@ The design avoids `exceptions`, `dynamic allocation`, `RTTI`, `locks`, and `I/O`
 
 ## Core Use Cases
 * **High-Frequency Trading (HFT):** Guard order-entry gates with near-zero overhead.
-* **Aerospace & Automotive:** Enforce “Design by Contract” with deterministic error propagation.
 * **Embedded Systems:** Real-time safe drivers with explicit failure handling.
 * **Mission Critical Software:** Separate recoverable data errors from fatal logic invariants.
 
