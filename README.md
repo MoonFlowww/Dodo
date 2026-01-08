@@ -387,7 +387,7 @@ Dodo achieves its performance through several key architectural decisions:
 
 1. **Branch Prediction Hints:** Every check uses `DODO_LIKELY` / `DODO_UNLIKELY` (`__builtin_expect` on GCC/Clang), keeping the success path in the pipeline.
 
-2. **Cold Path Isolation:** Failure endpoints are marked `cold` + `noinline`, pushing failure logic out of I-Cache.
+2. **Cold Path Isolation:** Failure endpoints are marked `cold` + `noinline`, pushing failure logic out of Cache.
 
 3. **Register-Passable Status:** `Dodo::Status` is small and cheap to return.
 
